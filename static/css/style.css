@@ -1,0 +1,329 @@
+:root {
+    --company-color: #2F5F91;
+    --company-hover: #23466b;
+    --body-color: #F1F6F8;
+    --add-color: #2ecc71;
+    --text-color: #333;
+    --font-family: 'Arial', sans-serif;
+    --padding: 10px;
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    height: 100vh;
+    background-color: #F1F6F8;
+  }
+  
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #F1F6F8;
+  }
+  
+  .left-panel, .right-panel {
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  
+  .left-panel {
+    width: 30%;
+    border-right: 2px solid #ccc;
+    background-color: white;
+  }
+  
+  .right-panel {
+    width: 70%;
+    position: relative;
+    background-color: #F1F6F8;
+  }
+  
+  .right-panel h2 {
+    margin-top: 0;
+  }
+  
+  .canvas {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 50px);
+    border: 2px dashed #ccc;
+    overflow: auto;
+  }
+  
+  .add-table-button {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: var(--company-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-table-button:hover {
+    background-color: var(--company-hover);
+  }
+  
+  .table {
+    position: absolute;
+    width: 300px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: move;
+    text-align: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .table.selected {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  }
+  
+  .table h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .left-panel h2 {
+    margin-top: 0;
+  }
+  
+  #table-details {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  #table-details h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  #table-details ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #table-details li {
+    margin-bottom: 10px;
+  }
+  
+  .update-table-button{
+    background-color: var(--company-color);
+    border-radius: 25px;
+    width: 25%;
+    height: 30px;
+    color: white;
+    border-color: transparent;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .update-table-button:hover{
+    background-color: var(--company-hover);
+    cursor: pointer;
+  }
+
+  .add-column-button{
+    background-color: transparent;
+    color: var(--company-color);
+    border-radius: 10px;
+    border-color: var(--company-color);
+    height: 25px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .add-column-button:hover{
+    background-color: var(--company-color);
+    color: white;
+    border-radius: 25px;
+    border-color: transparent;
+    cursor: pointer;
+  }
+
+  input[type="text"], select {
+    padding: 5px;
+    margin: 5px 0;
+    width: calc(100% - 10px);
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .relation-options {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .relation-options button {
+    display: block;
+    margin: 5px 0;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .relation-options button:hover {
+    background-color: #0056b3;
+  }
+  
+
+
+  /* Estilos para la lista de columnas */
+#column-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Estilo para cada columna */
+  #column-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilo para los inputs de nombre de columna y tipo de dato */
+  #column-list input[type="text"],
+  #column-list select {
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  /* Estilo para el checkbox y su etiqueta */
+  #column-list input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  #column-list label {
+    margin-right: 10px;
+    font-size: 14px;
+  }
+  
+  /* Estilo para el botón de relación */
+  #column-list button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #column-list button:hover {
+    background-color: #2980b9;
+  }
+
+  .text-area-item{
+    height: 100vh;
+  }
+
+  .textarea-show{
+    width: 95%;
+    height: 95%; /* Ajusta según tus necesidades */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px; /* Ajusta el padding para espacio alrededor del texto */
+    background-color: var(--body-color);
+    resize: none; /* Evita que el usuario redimensione el textarea */
+    font-family: monospace; /* Fuente monoespaciada para mejor visualización del código */
+    overflow: auto; /* Permite el scroll si el contenido es muy largo */
+  }
+
+  .textarea-show:focus {
+    outline: none; /* Elimina el contorno predeterminado del navegador */
+    border-color: var(--color-company); /* Cambia el color del borde al color de foco */
+    box-shadow: 0 0 0 2px var(--color-company-light); /* Agrega una sombra de enfoque opcional para mejorar la visibilidad */
+  }
+
+/* Container for the tabs */
+.tab-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Tab buttons styling */
+  .tab-button {
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background-color: #e0e0e0;
+    color: #333;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .tab-button:hover {
+    background-color: #d5d5d5;
+  }
+  
+  .tab-button.active {
+    background-color: var(--company-color);
+    color: #fff;
+    border-bottom: 2px solid var(--company-color);;
+  }
+  
+  /* Content container styling */
+  .tab-content {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Tab content item styling */
+  .tab-content-item {
+    display: none;
+  }
+  
+  .tab-content-item.active {
+    display: block;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .tab-button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  
+    .tab-content {
+      padding: 15px;
+    }
+  }
