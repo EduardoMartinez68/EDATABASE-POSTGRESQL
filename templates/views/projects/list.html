@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Proyectos</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2e3440;
+            color: #d8dee9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 15px;
+        }
+
+        .card {
+            background-color: #3b4252;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin: 10px;
+            width: 180px;
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border: 1px solid #4c566a;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+
+        .card img {
+            width: 60px;
+            height: 60px;
+            margin-top: 10px;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #eceff4;
+        }
+
+        .card p {
+            color: #88c0d0;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .card-add {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #5e81ac;
+            color: #eceff4;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .card-add:hover {
+            background-color: #81a1c1;
+        }
+
+        .card-add h3 {
+            font-size: 14px;
+            margin-top: 5px;
+            color: #eceff4;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 90%;
+            }
+
+            .card-add {
+                width: 90%;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            color: #eceff4;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Dashboard de Proyectos</h1>
+
+    <div class="container">
+
+        <!-- Card para agregar un nuevo proyecto -->
+        <div class="card card-add" onclick="window.location.href='/nuevo-proyecto'">
+            <span>+</span>
+            <h3>Nuevo Proyecto</h3>
+        </div>
+
+        <!-- Tarjetas de proyectos existentes -->
+        <div class="card">
+            <img src="https://cdn-icons-png.freepik.com/512/11561/11561232.png" alt="Project Image">
+            <h3>Proyecto 1</h3>
+            <p>Repositorio GitHub</p>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn-icons-png.freepik.com/512/11561/11561232.png" alt="Project Image">
+            <h3>Proyecto 2</h3>
+            <p>Repositorio GitHub</p>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn-icons-png.freepik.com/512/11561/11561232.png" alt="Project Image">
+            <h3>Proyecto 3</h3>
+            <p>Repositorio GitHub</p>
+        </div>
+    </div>
+
+</body>
+</html>
